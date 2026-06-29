@@ -19,8 +19,8 @@ step()    { echo -e "\n${BOLD}${CYAN}▶ $*${RESET}"; }
 skip()    { echo -e "${CYAN}[SKIP]${RESET}  $* (already installed)"; }
 
 # ── Config ────────────────────────────────────────────────────────────────────
-GITHUB_USER="GITHUB_USER"
-GITHUB_REPO="GITHUB_REPO"
+GITHUB_USER="eddwatts"
+GITHUB_REPO="unifi-ptz-manager"
 GITHUB_BRANCH="main"
 GITHUB_ARCHIVE="https://github.com/${GITHUB_USER}/${GITHUB_REPO}/archive/refs/heads/${GITHUB_BRANCH}.tar.gz"
 
