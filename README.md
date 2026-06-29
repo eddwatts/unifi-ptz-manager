@@ -145,7 +145,7 @@ Designed for a **dedicated low-cost device** — not an existing server.
 ## Installation
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/GITHUB_USER/GITHUB_REPO/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/eddwatts/unifi-ptz-manager/main/install.sh)
 ```
 
 **Idempotent** — safe to re-run. Existing credentials and data are always preserved.
