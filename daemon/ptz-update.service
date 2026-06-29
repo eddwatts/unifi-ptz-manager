@@ -1,0 +1,13 @@
+# ptz-update.service — one-shot update service (called by ptz-update.timer)
+# Location: /etc/systemd/system/ptz-update.service
+
+[Unit]
+Description=PTZ Patrol Manager — automatic update
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /var/www/ptz/update.sh --non-interactive
+StandardOutput=journal
+StandardError=journal

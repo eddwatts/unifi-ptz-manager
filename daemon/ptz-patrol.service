@@ -1,0 +1,30 @@
+# ptz-patrol.service — PTZ Patrol Manager daemon
+# Location: /etc/systemd/system/ptz-patrol.service
+# Install: sudo cp ptz-patrol.service /etc/systemd/system/
+#          sudo systemctl daemon-reload
+#          sudo systemctl enable --now ptz-patrol
+
+[Unit]
+Description=PTZ Patrol Manager — camera scheduler daemon
+Documentation=https://github.com/GITHUB_USER/GITHUB_REPO
+After=network.target mariadb.service
+Wants=mariadb.service
+
+[Service]
+Type=simple
+ExecStart=/opt/ptz-venv/bin/python3 /var/www/ptz/daemon/patrol.py
+WorkingDirectory=/var/www/ptz/daemon
+Restart=on-failure
+RestartSec=15
+StandardOutput=journal
+StandardError=journal
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/ptz /var/log /tmp
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+# ptz-update.timer — daily auto-update timer
+# Location: /etc/systemd/system/ptz-update.timer
+# Time is set during installation — edit OnCalendar to change
+
+[Unit]
+Description=PTZ Patrol Manager — daily auto-update
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target
