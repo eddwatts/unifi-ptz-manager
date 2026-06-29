@@ -17,8 +17,8 @@ warn()    { echo -e "${YELLOW}[WARN]${RESET}  $*"; }
 error()   { echo -e "${RED}[ERROR]${RESET} $*" >&2; exit 1; }
 step()    { echo -e "\n${BOLD}${CYAN}▶ $*${RESET}"; }
 
-GITHUB_USER="GITHUB_USER"
-GITHUB_REPO="GITHUB_REPO"
+GITHUB_USER="eddwatts"
+GITHUB_REPO="unifi-ptz-manager"
 GITHUB_BRANCH="main"
 GITHUB_ARCHIVE="https://github.com/${GITHUB_USER}/${GITHUB_REPO}/archive/refs/heads/${GITHUB_BRANCH}.tar.gz"
 
